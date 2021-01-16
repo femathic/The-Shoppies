@@ -1,50 +1,59 @@
-// .toggle-checkbox:checked {
-//   @apply: right-0 border-green-400;
-//   right: 0;
-//   border-color: #68D391;
-// }
-// .toggle-checkbox:checked + .toggle-label {
-//   @apply: bg-green-400;
-//   background-color: #68D391;
-// }
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
-
-.App {
-  text-align: center;
+.theme-background {
+  background: linear-gradient(90.6deg, #FF6A00 0.42%, #EE0979 99.69%);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.theme-border {
+  border: 2.5px solid #FB5C00;
 }
+.theme-text {
+  color: #FB5C00;
+}
+.active-nav {
+  border-left-width: 4px;
+  border-color: #FB5C00;
+}
+.active-nav-sm {
+  border-bottom-width: 4px;
+  border-color: #FB5C00;
+}
+.card-star-rating {
+  .star-ratings {
+    display: flex !important;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    .star-container {
+        padding: 0 !important;
+        svg {
+            width: 15px !important;
+            height: 15px !important;
+        }
+    }
+  }
+}
+.carousel-star-rating {
+  .star-ratings {
+    display: flex !important;
+
+    .star-container {
+        padding: 0 !important;
+        svg {
+            width: 25px !important;
+            height: 20px !important;
+        }
+    }
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.loader {
+  border-top-color: #FB5C00;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
 }
 
-.App-link {
-  color: #61dafb;
+@-webkit-keyframes spinner {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

@@ -21,7 +21,7 @@ const Layout = ({ Loader }) => (
   <Router>
     <GlobalProvider>
       <ScrollToTop />
-      <div className="w-full pb-10">
+      <div className="w-full p-0 m-0">
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route exact path="/">
