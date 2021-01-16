@@ -21,8 +21,7 @@ const Home = () => {
         history.push('/error');
       });
     return () => setLoading(true);
-    // eslint-disable-next-line
-    }, []);
+  }, []);
   return (
     <>
       { loading && <Intro /> }
