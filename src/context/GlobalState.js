@@ -2,9 +2,9 @@ import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
 
 const initialState = {
-  quizzes: [],
+  movies: [],
   error: '',
-  answers: null,
+  nominated: [],
 };
 
 export const GlobalContext = createContext(initialState);
