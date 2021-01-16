@@ -11,9 +11,9 @@ export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
-  const addQuizQuestions = (payload) => {
+  const fetchMovies = (payload) => {
     dispatch({
-      type: 'ADD_QUIZ_QUESTIONS',
+      type: 'FETCH_MOVIES',
       payload,
     });
   };
@@ -24,11 +24,22 @@ export const GlobalProvider = ({ children }) => {
       payload: err,
     });
   };
+  const removeError = () => {
+    dispatch({
+      type: 'REMOVE_ERROR',
+    });
+  };
 
-  const getQuizzes = (quizzes) => {
+  const addNominated = (movie) => {
     dispatch({
       type: 'GET_QUIZZES',
-      payload: quizzes,
+      payload: movie,
+    });
+  };
+  const removeNominated = (id) => {
+    dispatch({
+      type: 'GET_QUIZZES',
+      payload: id,
     });
   };
 
@@ -37,9 +48,11 @@ export const GlobalProvider = ({ children }) => {
       value={{
         quizzes: state.quizzes,
         error: state.error,
-        addQuizQuestions,
-        getQuizzes,
+        fetchMovies,
+        addNominated,
+        removeNominated,
         addError,
+        removeError,
       }}
     >
       {children}
