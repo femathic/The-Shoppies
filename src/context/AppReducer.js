@@ -1,24 +1,29 @@
 export default (state, action) => {
   switch (action.type) {
-    case 'ADD_QUIZ_QUESTIONS':
+    case 'FETCH_MOVIES':
       return {
         ...state,
-        quizzes: state.quizzes.map((quiz) => {
-          if (Number(quiz.id) === Number(action.payload.id)) {
-            return { ...quiz, questions: action.payload.questions };
-          }
-          return quiz;
-        }),
+        movies: [...state.movies, action.payload],
       };
-    case 'GET_QUIZZES':
+    case 'ADD_NOMINATED':
       return {
         ...state,
-        quizzes: action.payload,
+        nominated: [...state.nominated, action.payload],
+      };
+    case 'REMOVE_NOMINATED':
+      return {
+        ...state,
+        nominated: state.nominate.filter((movie) => movie.id !== action.payload),
       };
     case 'ADD_ERROR':
       return {
         ...state,
         error: action.payload,
+      };
+    case 'REMOVE_ERROR':
+      return {
+        ...state,
+        error: '',
       };
     default:
       return state;
