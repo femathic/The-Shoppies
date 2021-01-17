@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { GlobalContext } from '../context/GlobalState';
 import fetch from '../utils/fetch';
 import Intro from '../components/intro';
+import Movies from '../components/movies';
 
 const Home = () => {
   const { fetchMovies, addError } = useContext(GlobalContext);
@@ -10,10 +11,9 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('get', 'http://www.omdbapi.com/?s=inception&i=tt3896198&apikey=e4df776a')
+    fetch('get', 'http://www.omdbapi.com/?s=Fight&i=tt3896198&apikey=e4df776a')
       .then((res) => {
-        fetchMovies(res);
-        console.log(res);
+        fetchMovies(res.data.Search);
         setLoading(false);
       })
       .catch((err) => {
@@ -25,6 +25,7 @@ const Home = () => {
   return (
     <>
       { loading && <Intro /> }
+      { !loading && <Movies /> }
     </>
   );
 };

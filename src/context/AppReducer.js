@@ -3,7 +3,7 @@ export default (state, action) => {
     case 'FETCH_MOVIES':
       return {
         ...state,
-        movies: [...state.movies, action.payload],
+        movies: [...state.movies, ...action.payload],
       };
     case 'ADD_NOMINATED':
       return {

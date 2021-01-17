@@ -46,7 +46,7 @@ export const GlobalProvider = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
-        quizzes: state.quizzes,
+        movies: state.movies,
         error: state.error,
         fetchMovies,
         addNominated,
