@@ -51,3 +51,29 @@ const Card = ({ movie }) => (
 );
 
 export default Card;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
