@@ -4,7 +4,6 @@ import Card from './card';
 
 const ShowsPage = () => {
   const { movies } = useContext(GlobalContext);
-  console.log(movies);
   return (
     <>
       <div className="pt-24">
