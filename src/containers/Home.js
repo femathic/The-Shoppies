@@ -11,7 +11,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('get', 'http://www.omdbapi.com/?s=Fight&i=tt3896198&apikey=e4df776a')
+    fetch('get', 'https://www.omdbapi.com/?s=Fight&i=tt3896198&apikey=e4df776a')
       .then((res) => {
         fetchMovies(res.data.Search);
         setLoading(false);
